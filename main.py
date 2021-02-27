@@ -2,16 +2,16 @@
 # Creado por Alejandro Henestroza
 # Todos los componentes de este programa pueden ser copiados, reutilizados y redistribuidos
 
-from turtle import Screen, Turtle
+from turtle import Screen
 from ball import Ball
 from line import Line
 
 
 # Screen setup
 screen = Screen()
-screen.setup(width=1000, height=800, startx=460, starty=140)
+screen.setup(width=800, height=600, startx=560, starty=240)
 screen.bgcolor("black")
-screen.title("The Pong Game - by AleHenestroza")
+screen.title("Pong - by AleHenestroza")
 
 dotted_line = Line()
 
