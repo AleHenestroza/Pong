@@ -40,7 +40,11 @@ while running:
 
     # Detección de colisión con las paredes
     if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.bounce()
+        ball.bounce_y()
+
+    # Detección de colisión con las paletas
+    if ball.distance(l_paddle) < 15 or ball.distance(r_paddle) < 15:
+        ball.bounce_x()
 
 
 screen.exitonclick()
