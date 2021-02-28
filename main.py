@@ -2,6 +2,9 @@
 # Creado por Alejandro Henestroza
 # Todos los componentes de este programa pueden ser copiados, reutilizados y redistribuidos
 
+# TODO-1: Permitir mover las dos paletas en simultáneo
+# TODO-2: Mejorar la movilidad de las paletas
+
 from turtle import Screen
 from ball import Ball
 from line import Line
@@ -37,7 +40,7 @@ screen.onkey(l_paddle.down, "s")
 # Loop principal
 running = True
 while running:
-    time.sleep(0.075)
+    time.sleep(ball.move_speed)
     screen.update()
     ball.move()
 
