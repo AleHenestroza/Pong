@@ -1,7 +1,6 @@
 from turtle import Turtle
-import random
 
-MOVE_SPEED = 2
+MOVE_SPEED = 10
 
 
 class Ball(Turtle):
@@ -10,10 +9,8 @@ class Ball(Turtle):
         super().__init__("circle")
         self.color("white")
         self.penup()
-        self.set_random_heading()
-
-    def set_random_heading(self):
-        self.setheading(random.randint(0, 359))
 
     def move(self):
-        self.forward(MOVE_SPEED)
+        new_x = self.xcor() + MOVE_SPEED
+        new_y = self.xcor() + MOVE_SPEED
+        self.goto(new_x, new_y)
