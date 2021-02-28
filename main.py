@@ -6,6 +6,7 @@ from turtle import Screen
 from ball import Ball
 from line import Line
 from paddle import Paddle
+from score import Score
 import time
 
 
@@ -23,6 +24,8 @@ screen.tracer(0)
 ball = Ball()
 l_paddle = Paddle((-350, 0))
 r_paddle = Paddle((350, 0))
+l_score = Score((-100, 200))
+r_score = Score((100, 200))
 
 # Listeners
 screen.listen()
@@ -45,6 +48,15 @@ while running:
     # Detección de colisión con las paletas
     if (ball.distance(r_paddle) < 50 and ball.xcor() > 320) or (ball.distance(l_paddle) < 50 and ball.xcor() < -320):
         ball.bounce_x()
+
+    # Detección de puntos
+    if ball.xcor() > 390:
+        ball.reset_position()
+        l_score.add_score()
+
+    if ball.xcor() < -390:
+        ball.reset_position()
+        r_score.add_score()
 
 
 screen.exitonclick()
