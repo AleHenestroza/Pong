@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 PADDLE_WIDTH = 5
-PADDLE_SPEED = 20
+PADDLE_SPEED = 5
 
 
 class Paddle(Turtle):

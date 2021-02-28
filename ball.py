@@ -7,9 +7,8 @@ class Ball(Turtle):
         super().__init__("circle")
         self.color("white")
         self.penup()
-        self.x_move = 10
-        self.y_move = 10
-        self.move_speed = 0.1
+        self.x_move = 1
+        self.y_move = 1
 
     def move(self):
         new_x = self.xcor() + self.x_move
@@ -20,10 +19,9 @@ class Ball(Turtle):
         self.y_move *= -1
 
     def bounce_x(self):
-        self.x_move *= -1
-        self.move_speed *= 0.9
+        self.x_move *= -1.3
 
     def reset_position(self):
         self.goto(0, 0)
+        self.x_move = self.x_move / self.x_move
         self.bounce_x()  # La pelota va a ir hacia el lado de quien marcó el punto
-        self.move_speed = 0.1  # Se resetea la velocidad
