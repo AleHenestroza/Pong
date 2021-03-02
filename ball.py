@@ -19,7 +19,9 @@ class Ball(Turtle):
         self.y_move *= -1
 
     def bounce_x(self):
-        self.x_move *= -1.3
+        self.x_move *= -1
+        if abs(self.x_move) < 8:
+            self.x_move *= 1.3
 
     def reset_position(self):
         self.goto(0, 0)
